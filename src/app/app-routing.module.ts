@@ -12,7 +12,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'index',
+    path: '**',
     redirectTo: 'search',
     pathMatch: 'full'
   }

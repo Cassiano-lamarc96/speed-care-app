@@ -10,7 +10,7 @@ export class SearchIndexComponent implements OnInit {
   map: any;
   latitude: number;
   longitude: number;
-  distance: number;
+  initialZoom: number;
   minZoom: number;
   maxZoom: number;
 
@@ -36,14 +36,14 @@ export class SearchIndexComponent implements OnInit {
     const map = L.map('map', {
      minZoom: this.minZoom,
      maxZoom: this.maxZoom,
-    }).setView([this.latitude, this.longitude], this.distance);
+    }).setView([this.latitude, this.longitude], this.initialZoom);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
   }
 
   constructor() { 
-    this.distance = 14;
+    this.initialZoom = 14;
     this.minZoom = 11;
     this.maxZoom = 18;
   }
