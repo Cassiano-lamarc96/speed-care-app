@@ -1,5 +1,15 @@
-#map { height: 100%; }
+#map {
+    height: 100%; 
+    z-index: 0;
+}
 
 .search-input{
-    
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the div perfectly */
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+    padding: 20px; /* Add padding for content inside */
+    border-radius: 10px; /* Rounded corners */
+    z-index: 1;
 }

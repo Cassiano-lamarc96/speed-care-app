@@ -1,6 +1,11 @@
 <div id="map"></div>
-<div class="row search-input">
-    <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-        <input type="text">
-    </div>
+<div class="search-input col-5">
+    <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Pesquise no SpeedCare</mat-label>
+            <input matInput placeholder="Ex.: Guga Cabeleireiro">
+            <button matSuffix mat-icon-button aria-label="Clear">
+                <mat-icon>search</mat-icon>
+            </button>
+            <mat-hint *ngIf="false">Hint</mat-hint>
+        </mat-form-field>
 </div>
