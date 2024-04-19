@@ -20,11 +20,11 @@ export class SearchIndexComponent implements OnInit {
         (position: GeolocationPosition) => {
           this.latitude = position.coords.latitude;
           this.longitude = position.coords.longitude;
-          
-          resolve(); 
+
+          resolve();
         },
         (error) => {
-          reject(error); 
+          reject(error);
         }
       );
     });
@@ -34,15 +34,25 @@ export class SearchIndexComponent implements OnInit {
     await this.getUserGeolocation();
 
     const map = L.map('map', {
-     minZoom: this.minZoom,
-     maxZoom: this.maxZoom,
+      minZoom: this.minZoom,
+      maxZoom: this.maxZoom,
+      zoomControl: false,
     }).setView([this.latitude, this.longitude], this.initialZoom);
+
+    L.control.zoom({
+      zoomInTitle: 'Aproximar',
+      zoomOutTitle: 'Afastar',
+      position: 'topright'
+    }).addTo(map);
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
+
+
   }
 
-  constructor() { 
+  constructor() {
     this.initialZoom = 14;
     this.minZoom = 11;
     this.maxZoom = 18;

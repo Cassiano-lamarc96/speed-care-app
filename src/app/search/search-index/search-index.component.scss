@@ -1,19 +1,17 @@
 #map {
-    height: 89%;
-    z-index: 0;
+    height: 100%;
 }
 
-.search-input {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 1;
+.drawer {
+    height: 89%;
 
     .form-search {
-        width: 100%;
+        margin: 20px 20px 0px 20px;
+    }
+
+    .mat-chip-options {
+        max-width: 200px;
+        text-wrap: wrap;
+        margin: 0px 20px 0px 20px;
     }
 }

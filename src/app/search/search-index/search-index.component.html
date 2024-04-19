@@ -1,14 +1,29 @@
-<div id="map"></div>
-<div class="search-input col-lg-5 col-sm-12">
-    <mat-form-field appearance="outline" class="form-search">
-        <mat-label>Pesquise no SpeedCare</mat-label>
-        <input matInput placeholder="Ex.: Guga Cabeleireiro">
-        <button matSuffix mat-icon-button aria-label="Clear">
-            <mat-icon>search</mat-icon>
-        </button>
-    </mat-form-field>
-    <mat-chip-option>Cabeleireiro</mat-chip-option>
-    <mat-chip-option>Maquiagem</mat-chip-option>
-    <mat-chip-option>Depilação</mat-chip-option>
-    <mat-chip-option>Manicure</mat-chip-option>
-</div>
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+</mat-toolbar>
+<mat-drawer-container class="drawer" [hasBackdrop]="false">
+    <mat-drawer #drawer mode="over">
+        <div class="row mt-3 form-search">
+            <div class="col-12">
+                <mat-form-field appearance="outline">
+                    <mat-label>Pesquise no SpeedCare</mat-label>
+                    <input matInput placeholder="Ex.: Guga Cabeleireiro">
+                    <button matSuffix mat-icon-button aria-label="search" (click)="drawer.toggle()">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row mat-chip-options">
+            <div class="col-12">
+                <mat-chip-option>Cabeleireiro</mat-chip-option>
+                <mat-chip-option>Maquiagem</mat-chip-option>
+                <mat-chip-option>Depilação</mat-chip-option>
+                <mat-chip-option>Manicure</mat-chip-option>
+            </div>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div id="map"></div>
+    </mat-drawer-content>
+</mat-drawer-container>
